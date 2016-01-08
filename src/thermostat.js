@@ -2,6 +2,7 @@ var Thermostat = function() {
   this.temperature = 20;
   this.MINIMUM_TEMPERATURE = 10;
   this.maximumTemperature = 25;
+  this.powerSavingMode = true;
 };
 
 Thermostat.prototype.upButton = function() {
@@ -19,11 +20,16 @@ Thermostat.prototype.downButton = function() {
 };
 
 Thermostat.prototype.powerSavingModeOn = function() {
+  if (this.temperature > 25) {
+    this.temperature = 25;
+  }
   this.maximumTemperature = 25;
+  this.powerSavingMode = true;
 };
 
 Thermostat.prototype.powerSavingModeOff = function() {
   this.maximumTemperature = 32;
+    this.powerSavingMode = false;
 };
 
 Thermostat.prototype.reset = function() {
@@ -32,10 +38,10 @@ Thermostat.prototype.reset = function() {
 
 Thermostat.prototype.temperatureDisplay = function() {
   if (this.temperature < 18) {
-    return 'low usage';
+    return 'low-usage';
   } else if (this.temperature < 25) {
-    return 'medium usage';
+    return 'medium-usage';
   } else {
-    return 'high usage';
+    return 'high-usage';
   }
 };

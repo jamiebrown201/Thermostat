@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <head>
-  <title>Thermostat</title>
-  <script src="./lib/jquery.js"></script>
-  <script src="src/thermostat.js"></script>
-  <script src="thermostat_jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+</head>
+<div id="display">
+  <div id="powersavingmode">
+    <p id="onoffswitch-title">Power Saving Mode</p>
+    <div class="onoffswitch">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+      <label id="test" class="onoffswitch-label" for="myonoffswitch">
+          <span class="onoffswitch-inner"></span>
+          <span class="onoffswitch-switch"></span>
+      </label>
+    </div>
+  </div>
+  <h1 id="temperature">Temperature</h1>
+  <p id="updown"><a class="minus-button">-</a>
+                 <a class="plus-button">+</a></p>
+  <div class="reset">
+    <div class="reset-button">
+    </div>
+    Reset
+  </div>
+</div>
+
+
+
+
+<title>Thermostat</title>
+<script src="./lib/jquery.js"></script>
+<script src="src/thermostat.js"></script>
+<script src="thermostat_jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-  <h1>Thermostat</h1>
-  <p>
-    <button id="temperature-up">+</button>
-    <button id="temperature-down">-</button>
-    <button id="temperature-reset">reset</button>
-    power saving mode is <span id="power-saving-status">on</span>
-    <button id="powersaving-on">PSM on</button>
-    <button id="powersaving-off">PSM off</button>
-  </p>
+<h1>Thermostat</h1>
+<p>
+  <button id="temperature-up">+</button>
+  <button id="temperature-down">-</button>
+  <button id="temperature-reset">reset</button>
+  power saving mode is <span id="power-saving-status">on</span>
+  <button id="powerSavingModeOn">PSM on</button>
+  <button id="powerSavingModeOff">PSM off</button>
+<p id="PSM">Power Saving mode is: ON</p>
+<section>
+<p>Current temperature: <span id="current-temperature"><span></p>
+</section>
+</p>
+
+
+
 </body>
